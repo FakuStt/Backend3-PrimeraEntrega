@@ -1,9 +1,12 @@
 import { faker } from "@faker-js/faker";
+import userModel from "../dao/models/User.js";
+import petModel from "../dao/models/Pet.js";
 import { createHash } from "../utils/index.js";
+import { use } from "chai";
 
 class MockService {
 
-    async generateMockingPets(cant){
+    static async generateMockingPets(cant){
         const mockingPets = [];
 
         for(let i = 0; i < cant; i++){
@@ -18,7 +21,7 @@ class MockService {
         return mockingPets;
     }
 
-    async generateMockingUsers(cant){
+    static async generateMockingUsers(cant){
         const mockingUsers = [];
         const roles = ["user", "admin"];
 
@@ -37,11 +40,13 @@ class MockService {
         return mockingUsers;
     }
 
-    async generateData(cantUsers, cantPets) {
+    static async generateData(cantUsers, cantPets) {
         const users = await this.generateMockingUsers(cantUsers);
         const pets = await this.generateMockingPets(cantPets);
 
-        return{users, pets}
+        const addPets = await petModel.insertMany(pets);
+        const addUsers = await userModel.insertMany(users);
+        return{users: addUsers, pets: addPets};
     }
 
 }
