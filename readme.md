@@ -13,8 +13,12 @@
 5. **Notas Adicionales**  
 6. **Imágenes** 
 
+
+
 ## Descripción General
 Este proyecto es una API que incluye un router llamado `mocks.router.js`, el cual se encarga de manejar las rutas relacionadas con la generación de datos ficticios para usuarios y mascotas. Este proyecto está diseñado para ser ejecutado localmente utilizando Visual Studio Code (VSCode).
+
+
 
 ## Requisitos
 
@@ -25,6 +29,7 @@ Este proyecto es una API que incluye un router llamado `mocks.router.js`, el cua
   - mongoose
   - @faker-js/faker
   - bcrypt (para encriptar contraseñas)
+
 
 
 ## Instalación
@@ -39,6 +44,7 @@ Este proyecto es una API que incluye un router llamado `mocks.router.js`, el cua
     npm start
     ```
 
+
 ## Uso de la API
 
 ### 1. **GET /mockingpets**
@@ -51,6 +57,7 @@ Este proyecto es una API que incluye un router llamado `mocks.router.js`, el cua
 GET http://localhost:3000/api/mocks/mockingpets
 ```
 
+
 ### 2. **GET /mockingusers**
 **Descripción:** Genera una lista de usuarios simulados.  
 **Parámetros opcionales:**
@@ -60,6 +67,7 @@ GET http://localhost:3000/api/mocks/mockingpets
 ```bash
 GET http://localhost:3000/api/mocks/mockingusers
 ```
+
 
 ### 3. **POST /generatedata**
 **Descripción:** Genera usuarios y mascotas simulados y los almacena en la base de datos.
@@ -72,6 +80,7 @@ GET http://localhost:3000/api/mocks/mockingusers
 POST http://localhost:3000/api/mocks/generatedata/1/3
 ```
 
+
 ### 4. **GET /users**
 **Descripción:** Recupera todos los usuarios almacenados en la base de datos.
 
@@ -79,6 +88,7 @@ POST http://localhost:3000/api/mocks/generatedata/1/3
 ```bash
 GET http://localhost:3000/api/users
 ```
+
 
 ### 5. **GET /pets**
 **Descripción:** Recupera todos las mascotas almacenados en la base de datos.
@@ -89,12 +99,14 @@ GET http://localhost:3000/api/pets
 ```
 ---
 
+
+
 ## Notas Adicionales
 -**Contraseñas**: Las contraseñas de los usuarios están encriptadas con bcrypt.
 -**Roles**: Los usuarios tienen roles aleatorios (user o admin).
 -**Relaciones**:  Las mascotas generadas no tienen un dueño asignado por defecto.
 
----
+
 
 ## Imagenes
 
@@ -111,5 +123,7 @@ A continuación, se muestran ejemplos visuales de la funcionalidad de la API:
 ![Texto alternativo](./src/public/img/getusers_entrega.png)
 5. **Get Pets**
 ![Texto alternativo](./src/public/img/getpets_entrega.png)
+
+
 
 ## ¡Gracias por haber llegado hasta aquí!
